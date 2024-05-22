@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99A605C6-E2C7-4A55-90CF-FA165B6C8F2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewspaperBillingApp</RootNamespace>
+    <AssemblyName>NewspaperBillingApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Software\microsoft.office.interop.excel.dll-53371\microsoft.office.interop.excel.dll-53371\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassConnection.cs" />
+    <Compile Include="FrmAddAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddAgent.Designer.cs">
+      <DependentUpon>FrmAddAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddCustomer.Designer.cs">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddNewspaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddNewspaper.Designer.cs">
+      <DependentUpon>FrmAddNewspaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBillPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBillPay.Designer.cs">
+      <DependentUpon>FrmBillPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustCalendarReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustCalendarReport.Designer.cs">
+      <DependentUpon>FrmCustCalendarReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerDetails.Designer.cs">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashbord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashbord.Designer.cs">
+      <DependentUpon>FrmDashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDateWiseNewspaper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDateWiseNewspaper.Designer.cs">
+      <DependentUpon>FrmDateWiseNewspaper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetailsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailsList.designer.cs">
+      <DependentUpon>FrmDetailsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMassage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMassage.designer.cs">
+      <DependentUpon>FrmMassage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewDashboard.Designer.cs">
+      <DependentUpon>FrmNewDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaymentHistory.Designer.cs">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanVaccation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanVaccation.Designer.cs">
+      <DependentUpon>FrmPlanVaccation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistration.Designer.cs">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewspaperDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewspaperDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\DataSetAddCustomer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAddCustomer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\DataSetBillGenrated.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBillGenrated.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\DataSetPaymentHistory.cs">
+      <DependentUpon>DataSetPaymentHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\DataSetPaymentHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPaymentHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\FrmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReport\FrmAddCustomer.Designer.cs">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\FrmBillGenrated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReport\FrmBillGenrated.Designer.cs">
+      <DependentUpon>FrmBillGenrated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReport\FrmPaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReport\FrmPaymentHistory.Designer.cs">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBlank.Designer.cs">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDays.Designer.cs">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPlanVacc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPlanVacc.Designer.cs">
+      <DependentUpon>UserControlPlanVacc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAddAgent.resx">
+      <DependentUpon>FrmAddAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddCustomer.resx">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddNewspaper.resx">
+      <DependentUpon>FrmAddNewspaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBillPay.resx">
+      <DependentUpon>FrmBillPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustCalendarReport.resx">
+      <DependentUpon>FrmCustCalendarReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerDetails.resx">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashbord.resx">
+      <DependentUpon>FrmDashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDateWiseNewspaper.resx">
+      <DependentUpon>FrmDateWiseNewspaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailsList.resx">
+      <DependentUpon>FrmDetailsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMassage.resx">
+      <DependentUpon>FrmMassage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewDashboard.resx">
+      <DependentUpon>FrmNewDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaymentHistory.resx">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanVaccation.resx">
+      <DependentUpon>FrmPlanVaccation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReport\FrmAddCustomer.resx">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReport\FrmBillGenrated.resx">
+      <DependentUpon>FrmBillGenrated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReport\FrmPaymentHistory.resx">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReport\ReportAddCustomer.rdlc" />
+    <EmbeddedResource Include="RDLCReport\ReportBillGenrated.rdlc" />
+    <EmbeddedResource Include="RDLCReport\ReportPaymentHistory.rdlc" />
+    <EmbeddedResource Include="UserControlBlank.resx">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDays.resx">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPlanVacc.resx">
+      <DependentUpon>UserControlPlanVacc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="NewspaperDBDataSet.xsc">
+      <DependentUpon>NewspaperDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet.xss">
+      <DependentUpon>NewspaperDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet1.xsc">
+      <DependentUpon>NewspaperDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet1.xss">
+      <DependentUpon>NewspaperDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet2.xsc">
+      <DependentUpon>NewspaperDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet2.xss">
+      <DependentUpon>NewspaperDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet3.xsc">
+      <DependentUpon>NewspaperDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet3.xss">
+      <DependentUpon>NewspaperDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet4.xsc">
+      <DependentUpon>NewspaperDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet4.xss">
+      <DependentUpon>NewspaperDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet5.xsc">
+      <DependentUpon>NewspaperDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="NewspaperDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewspaperDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NewspaperDBDataSet5.xss">
+      <DependentUpon>NewspaperDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RDLCReport\DataSetAddCustomer.xsc">
+      <DependentUpon>DataSetAddCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReport\DataSetAddCustomer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAddCustomer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReport\DataSetAddCustomer.xss">
+      <DependentUpon>DataSetAddCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReport\DataSetBillGenrated.xsc">
+      <DependentUpon>DataSetBillGenrated.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReport\DataSetBillGenrated.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBillGenrated.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReport\DataSetBillGenrated.xss">
+      <DependentUpon>DataSetBillGenrated.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReport\DataSetPaymentHistory.xsc">
+      <DependentUpon>DataSetPaymentHistory.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReport\DataSetPaymentHistory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPaymentHistory.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReport\DataSetPaymentHistory.xss">
+      <DependentUpon>DataSetPaymentHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\calendar_prev_ui%28%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewsPaperLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images__1_-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newspaper_bill_logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newpaper-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_1-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_list-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_bill-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_history-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agent-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_generate-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_icon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active_customer-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deactive_customer-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\total_amt-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balance_amt-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paid_amt_icon-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balance_amount-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newspaper_bill_logo-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\total_amt-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-gif1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memes-loading-unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect-icon-logout-sign-icon-interface-icon-csjyQF9Y-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6791-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-minus-minimize-icon-png-material-image_1187222-removebg-preview5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6681204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%295.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-icon-logout-website-button-on-white-background-HYCG3Y.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%297.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %284%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OOjs_UI_icon_close-ltr-destructive.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download__1_-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%291.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
